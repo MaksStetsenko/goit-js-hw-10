@@ -52,18 +52,19 @@ const renderList = country => {
 const renderInfo = country => {
   const { name, flags, capital, population, languages } = country;
   return `
-    <div class='country-inform'>
+    <div class='country-name-and-flag'>
         <img
+            class='country-flag'
             src ='${flags.svg}' 
             alt = '${name.official}' 
             width = 60px>
-        <h1 class='title'>${name.official}</h1>
+        <h1 class='country-name'>${name.official}</h1>
     </div>
-    <div>
-        <p class='description'>Capital : ${capital}</p>
-        <p class='description'>Population : ${population}</p>
-        <p class='description'>Languages : ${Object.values(languages)}</p>
-    </div>`;
+    <ul class='country-main-information'>
+        <li class='description'>Capital : ${capital}</li>
+        <li class='description'>Population : ${population}</li>
+        <li class='description'>Languages : ${Object.values(languages)}</li>
+    </ul>`;
 };
 
 const error = () => {
